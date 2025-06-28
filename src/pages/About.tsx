@@ -18,7 +18,7 @@ const About = () => {
         {/* ORIGIN STORY */}
         <div className="space-y-6">
           <h2 className="text-2xl font-bold uppercase tracking-wider text-red-500">
-            Where It All Started
+            Change me 1 (origin story?)
           </h2>
           <p className="text-white/80 leading-relaxed text-base md:text-lg">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
@@ -32,7 +32,7 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-10">
           <div>
             <h3 className="text-xl font-semibold text-red-600 uppercase mb-2">
-              Our Vision
+              Change me 2 (vision/mission?)
             </h3>
             <p className="text-white/80 text-base leading-relaxed">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
@@ -43,7 +43,7 @@ const About = () => {
           </div>
           <div>
             <h3 className="text-xl font-semibold text-red-600 uppercase mb-2">
-              Our Mission
+              Change me 3 (some other third section)
             </h3>
             <p className="text-white/80 text-base leading-relaxed">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
