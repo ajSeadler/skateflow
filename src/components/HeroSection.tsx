@@ -1,17 +1,30 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
+  const [bgLoaded, setBgLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = "/norman-ollie-rock.JPG";
+    img.onload = () => setBgLoaded(true);
+  }, []);
+
   return (
-    <section
-      className="relative w-full h-screen bg-black text-white"
-      style={{
-        backgroundImage: "url('/norman-ollie-rock.JPG')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      {/* Dark overlay for contrast */}
-      <div className="absolute inset-0 bg-black/40" />
+    <section className="relative w-full h-screen bg-black text-white overflow-hidden">
+      {/* Background image fade-in */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: bgLoaded ? 1 : 0 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: `url('/norman-ollie-rock.JPG')`,
+        }}
+      />
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/40 " />
 
       {/* Main content */}
       <div className="relative z-10 flex flex-col justify-center h-full px-8 md:px-20 max-w-2xl">
@@ -56,7 +69,7 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Scroll cue: smooth loop */}
+      {/* Scroll cue */}
       <motion.div
         className="absolute bottom-8 left-8 z-20 flex items-center text-white uppercase tracking-wider text-xs"
         initial={{ opacity: 0, y: 0 }}
@@ -86,7 +99,7 @@ const HeroSection = () => {
 
       {/* Photo credit */}
       <div className="absolute bottom-4 right-6 z-20 text-[11px] text-gray-400">
-        Photo by
+        Photo by{" "}
         <a
           href="https://instagram.com/eduardo.martinez.gallegos"
           target="_blank"
